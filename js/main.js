@@ -79,6 +79,7 @@ $(document).on('ready',function(){
     $('.contato').removeClass("invisible");
     $(this).addClass("menu_ativado");
     checkScrollBar();
+    liga_contato();
   });
   checkScrollBar = function(){
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
@@ -89,5 +90,9 @@ $(document).on('ready',function(){
   console.log(cor1);
 
 
+// Conteudo append
+var liga_contato = function(){
+  $(".contato").load("test.html");
+}
 
 });
