@@ -73,13 +73,14 @@ p{
 
 
 /*Conditionals*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
 
   .menu{
     top:0px;
     float:left;
     right:0px;
     padding:15px;
+    width:100%;
   }
 
 }

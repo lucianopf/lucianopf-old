@@ -51,50 +51,45 @@ $(document).on('ready',function(){
   });
 
 
-// MENUS
-  $(document).on("ready",function(){
-    liga_content("inicio");
-  });
-  var limpaContent = function(){
-    $('.content').children().addClass("invisible");
+// Conteudo append
+checkScrollBar = function(){
+  $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
+};
+
+  var liga_content = function(nome){
+    $('.content').empty();
+    arq = nome + ".html"
+    $('.content').load(arq);
     $('.menu span').children().removeClass("menu_ativado");
+    menu_item = ".ativa_"+nome;
+    $(menu_item).addClass("menu_ativado");
   }
+liga_content("inicio");
+// MENUS
   $('.ativa_inicio').on('click',function(){
-    limpaContent();
     liga_content("inicio");
-    $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_sobre').on('click',function(){
-    limpaContent();
     liga_content("sobre");
-    $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_projetos').on('click',function(){
-    limpaContent();
     liga_content("projetos");
-    $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_contato').on('click',function(){
-    limpaContent();
     liga_content("contato");
-    $(this).addClass("menu_ativado");
     checkScrollBar();
   });
-  checkScrollBar = function(){
-    $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
-  };
+
   checkScrollBar();
 
+
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
+
   console.log(cor1);
 
 
-// Conteudo append
-function liga_content(nome){
-  $(".contato").load(nome+".html");
-}
 
 });
