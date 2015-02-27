@@ -55,7 +55,7 @@ $(document).on('ready',function(){
 checkScrollBar = function(){
   setTimeout(function(){
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
-    },100);
+  },250);
 };
 
   var liga_content = function(nome){
