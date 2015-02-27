@@ -1,0 +1,85 @@
+/*Font*/
+@font-face {
+    font-family: 'satellite'; /*a name to be used later*/
+    src: url('../fonts/Satellite.ttf'); /*URL to font*/
+}
+::-webkit-scrollbar {
+    display:none;
+}
+/*Logo*/
+.main-logo{
+  width:150px;
+  height:150px;
+  }
+.logo{
+  width:150px;
+  height:150px;
+}
+/*Visibilidades*/
+.invisible{
+  display:none;
+}
+/*Areas*/
+body{
+  background-attachment:fixed;
+}
+.main{
+  background-color:white;
+  width:55%;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'satellite';
+  min-width:350px;
+  overflow:hidden;
+}
+.header{
+}
+.menu{
+  position:relative;
+  top:-85px;
+  float:right;
+  right:50px;
+}
+.content{
+  padding:20px;
+}
+.footer{
+  padding:10px;
+}
+.footer p{
+  font-size:12px;
+}
+.footer a{
+  letter-spacing: 15px;
+}
+/*Elementos*/
+p{
+  font-size:23px;
+}
+.menu span{
+  font-size:17px;
+}
+.menu a{
+  text-decoration: none;
+  letter-spacing:1px;
+
+}
+.menu_ativado{
+  font-weight: bold;
+}
+.menu_ativo{
+  font-weight: bold;
+}
+
+
+/*Conditionals*/
+@media screen and (max-width: 800px) {
+
+  .menu{
+    top:0px;
+    float:left;
+    right:0px;
+    padding:15px;
+  }
+
+}
