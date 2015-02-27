@@ -52,34 +52,36 @@ $(document).on('ready',function(){
 
 
 // MENUS
+  $(document).on("ready",function(){
+    liga_content("inicio");
+  });
   var limpaContent = function(){
     $('.content').children().addClass("invisible");
     $('.menu span').children().removeClass("menu_ativado");
   }
   $('.ativa_inicio').on('click',function(){
     limpaContent();
-    $('.inicio').removeClass("invisible");
+    liga_content("inicio");
     $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_sobre').on('click',function(){
     limpaContent();
-    $('.sobre').removeClass("invisible");
+    liga_content("sobre");
     $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_projetos').on('click',function(){
     limpaContent();
-    $('.projetos').removeClass("invisible");
+    liga_content("projetos");
     $(this).addClass("menu_ativado");
     checkScrollBar();
   });
   $('.ativa_contato').on('click',function(){
     limpaContent();
-    $('.contato').removeClass("invisible");
+    liga_content("contato");
     $(this).addClass("menu_ativado");
     checkScrollBar();
-    liga_contato();
   });
   checkScrollBar = function(){
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
@@ -91,8 +93,8 @@ $(document).on('ready',function(){
 
 
 // Conteudo append
-var liga_contato = function(){
-  $(".contato").load("test.html");
+function liga_content(nome){
+  $(".contato").load(nome+".html");
 }
 
 });
