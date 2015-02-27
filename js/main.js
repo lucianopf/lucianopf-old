@@ -88,7 +88,7 @@ liga_content("inicio");
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
     console.log("Sai");
   };
-
+  checkScrollBar();
 
   //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
