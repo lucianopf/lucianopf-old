@@ -53,13 +53,16 @@ $(document).on('ready',function(){
 
 // Conteudo append
 checkScrollBar = function(){
-  $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
+  setTimeout(function(){
+    $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
+    },100);
 };
 
   var liga_content = function(nome){
     $('.content').empty();
     arq = nome + ".html"
     $('.content').load(arq);
+    checkScrollBar();
     $('.menu span').children().removeClass("menu_ativado");
     menu_item = ".ativa_"+nome;
     $(menu_item).addClass("menu_ativado");
@@ -68,28 +71,27 @@ liga_content("inicio");
 // MENUS
   $('.ativa_inicio').on('click',function(){
     liga_content("inicio");
-    checkScrollBar();
   });
   $('.ativa_sobre').on('click',function(){
     liga_content("sobre");
-    checkScrollBar();
   });
   $('.ativa_projetos').on('click',function(){
     liga_content("projetos");
-    checkScrollBar();
+    console.log("dps ainda");
   });
   $('.ativa_contato').on('click',function(){
     liga_content("contato");
-    checkScrollBar();
   });
 
-  checkScrollBar();
+  checkScrollBar2 = function(){
+    console.log("Entrei");
+    $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
+    console.log("Sai");
+  };
 
 
+  //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
-
-  console.log(cor1);
-
 
 
 });
