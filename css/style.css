@@ -70,6 +70,11 @@ p{
 .menu_ativo{
   font-weight: bold;
 }
+img{
+  max-width:100%;
+}
+.solucoes{
+}
 
 
 /*Conditionals*/

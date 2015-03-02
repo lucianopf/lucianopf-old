@@ -1,20 +1,29 @@
+// Inicia Script quando o dom esta carregado
 $(document).on('ready',function(){
+  // Pega altura e largura
   var largura = $(".main-logo").width();
   var altura = $(".main-logo").height();
+  // Cria instancia de trianglify
   var t = new Trianglify({cellsize:largura/7});
   var pattern = t.generate(largura, altura);
+  // Gera frame com o tamanho e largura atual e seta em logo
   document.body.setAttribute('style',  'background-image: '+pattern.dataUrl);
   $(".main-logo").css( "background-image", pattern.dataUrl );
+  // Captura cores dos temas gerado
   cor1 = pattern.options.x_gradient;
   cor2 = pattern.options.y_gradient;
+  // Gera background e seta em body
   var t = new Trianglify({cellsize:largura/1.5, x_gradient: cor1,
   y_gradient: cor2});
   var pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
   document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+  // Recria o pattern uma vez que janela foi redimensionada
   $(window).on('resize', function(){
     pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
     document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+    colorir();
   });
+  // Captura das cores
   var escolha1;
   var escolha2;
   qtd = cor1.length;
@@ -28,7 +37,8 @@ $(document).on('ready',function(){
     }
     qtd = qtd - 1;
   }
-
+  // Gera as cores dos elementos do dom
+  var colorir = function(){
   $("body").css( "color", escolha2 );
   $(".footer").css( "background-color", escolha2 );
   $("a").css("color", escolha3);
@@ -49,15 +59,16 @@ $(document).on('ready',function(){
   }).mouseout(function() {
       $(this).css("color",escolha1);
   });
+}
+colorir();
 
-
-// Conteudo append
+// Conteudo append gerando scrollbar
 checkScrollBar = function(){
   setTimeout(function(){
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
   },250);
 };
-
+// Seleciona menu e liga opcao desejada
   var liga_content = function(nome){
     $('.content').empty();
     arq = nome + ".html"
@@ -70,19 +81,28 @@ checkScrollBar = function(){
 liga_content("inicio");
 // MENUS
   $('.ativa_inicio').on('click',function(){
-    liga_content("inicio");
+    if(!$('.ativa_inicio').hasClass('menu_ativado')){
+      liga_content("inicio");
+      colorir();
+      
+    };
   });
   $('.ativa_sobre').on('click',function(){
+    if(!$('.ativa_sobre').hasClass('menu_ativado')){
     liga_content("sobre");
+    };
   });
   $('.ativa_projetos').on('click',function(){
-    liga_content("projetos");
-    console.log("dps ainda");
+    if(!$('.ativa_projetos').hasClass('menu_ativado')){
+      liga_content("projetos");
+    };
   });
   $('.ativa_contato').on('click',function(){
-    liga_content("contato");
+    if(!$('.ativa_contato').hasClass('menu_ativado')){
+      liga_content("contato");
+    };
   });
-
+  // Verifica se scrollbar esta correta na pagina
   checkScrollBar2 = function(){
     console.log("Entrei");
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
