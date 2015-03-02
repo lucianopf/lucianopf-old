@@ -21,13 +21,11 @@ $(document).on('ready',function(){
   $(window).on('resize', function(){
     pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
     document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
-    colorir();
+    liga_cores();
   });
   // Captura das cores
-  var escolha1;
-  var escolha2;
   qtd = cor1.length;
-  while(qtd>0){
+  while(qtd>=0){
     if (qtd == cor1.length){
       escolha2 = cor1[qtd-1];
       escolha3 = cor1[qtd-2];
@@ -38,29 +36,29 @@ $(document).on('ready',function(){
     qtd = qtd - 1;
   }
   // Gera as cores dos elementos do dom
-  var colorir = function(){
-  $("body").css( "color", escolha2 );
-  $(".footer").css( "background-color", escolha2 );
-  $("a").css("color", escolha3);
-  $("a").mouseover(function() {
-      $(this).css("color",escolha2);
-  }).mouseout(function() {
-      $(this).css("color",escolha3);
-  });
-  $(".menu a").mouseover(function() {
-      $(this).addClass("menu_ativo");
-  }).mouseout(function() {
-      $(this).removeClass("menu_ativo");
-  });
-  $(".footer").css( "color", escolha1 );
-  $(".footer a").css( "color", escolha1 );
-  $(".footer a").mouseover(function() {
-      $(this).css("color",escolha3);
-  }).mouseout(function() {
-      $(this).css("color",escolha1);
-  });
+var liga_cores = function(){
+    $("body").css( "color", escolha2 );
+    $(".footer").css( "background-color", escolha2 );
+    $("a").css("color", escolha3);
+    $("a").mouseover(function() {
+        $(this).css("color",escolha2);
+    }).mouseout(function() {
+        $(this).css("color",escolha3);
+    });
+    $(".menu a").mouseover(function() {
+        $(this).addClass("menu_ativo");
+    }).mouseout(function() {
+        $(this).removeClass("menu_ativo");
+    });
+    $(".footer").css( "color", escolha1 );
+    $(".footer a").css( "color", escolha1 );
+    $(".footer a").mouseover(function() {
+        $(this).css("color",escolha3);
+    }).mouseout(function() {
+        $(this).css("color",escolha1);
+    });
 }
-colorir();
+liga_cores();
 
 // Conteudo append gerando scrollbar
 checkScrollBar = function(){
@@ -83,8 +81,6 @@ liga_content("inicio");
   $('.ativa_inicio').on('click',function(){
     if(!$('.ativa_inicio').hasClass('menu_ativado')){
       liga_content("inicio");
-      colorir();
-      
     };
   });
   $('.ativa_sobre').on('click',function(){
@@ -104,14 +100,10 @@ liga_content("inicio");
   });
   // Verifica se scrollbar esta correta na pagina
   checkScrollBar2 = function(){
-    console.log("Entrei");
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
-    console.log("Sai");
   };
-  checkScrollBar();
+  checkScrollBar2();
 
   //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
-
-
 });
