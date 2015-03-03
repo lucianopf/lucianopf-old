@@ -1,7 +1,7 @@
 /*Font*/
 @font-face {
     font-family: 'satellite'; /*a name to be used later*/
-    src: url('../fonts/Satellite.ttf'); /*URL to font*/
+    src: url('../fonts/caviar/CaviarDreams.ttf'); /*URL to font*/
 }
 ::-webkit-scrollbar {
     display:none;
@@ -74,6 +74,13 @@ img{
   max-width:100%;
 }
 .solucoes{
+  width:80%;
+}
+.botoes{
+  width:50%;
+}
+.b1{
+  width:90%;
 }
 
 

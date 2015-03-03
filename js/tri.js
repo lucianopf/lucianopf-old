@@ -306,16 +306,6 @@ Trianglify.colorbrewer = {YlGn: {
 7: ["#f7f7f7","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#252525"],
 8: ["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#252525"],
 9: ["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#252525","#000000"]
-},PuOr: {
-3: ["#f1a340","#f7f7f7","#998ec3"],
-4: ["#e66101","#fdb863","#b2abd2","#5e3c99"],
-5: ["#e66101","#fdb863","#f7f7f7","#b2abd2","#5e3c99"],
-6: ["#b35806","#f1a340","#fee0b6","#d8daeb","#998ec3","#542788"],
-7: ["#b35806","#f1a340","#fee0b6","#f7f7f7","#d8daeb","#998ec3","#542788"],
-8: ["#b35806","#e08214","#fdb863","#fee0b6","#d8daeb","#b2abd2","#8073ac","#542788"],
-9: ["#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2","#8073ac","#542788"],
-10: ["#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#d8daeb","#b2abd2","#8073ac","#542788","#2d004b"],
-11: ["#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2","#8073ac","#542788","#2d004b"]
 }};
 // I've left out the non-continuous colorbrewer scales here because they don't really look that nice as mesh
 // palettes, but if you want to try them out you can grab them from http://bl.ocks.org/mbostock/5577023

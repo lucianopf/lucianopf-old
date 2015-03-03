@@ -1,2 +1,67 @@
-<p>Sunt adipisicing deserunt cillum irure eiusmod proident veniam veniam dolore adipisicing sunt.<p>
-<img src="http://poweredwebdev.com/wp-content/uploads/2014/12/HTML-Coding.jpg"></img>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/elastic_grid.min.js"></script>
+<script src="js/elastic_grid.encode.js"></script>
+
+
+<div id="demo"></div>
+
+
+<script type="text/javascript">
+$(function(){
+$("#demo").elastic_grid({
+'filterEffect': '<a href="http://www.jqueryscript.net/tags.php?/popup/">fly</a>', // moveup, scaleup, fallperspective, fly, flip, helix , popup
+'hoverDirection': true,
+'hoverDelay': 0,
+'hoverInverse': false,
+'expandingSpeed': 500,
+'expandingHeight': 500,
+'items' :
+[
+{
+'title' : 'L.GUIMARAES ARQUITETURA',
+'description'   : 'Site feito por encomenda para o escritório de arquitetura L GUIMARAES.',
+'thumbnail' : ['img/projetos/lguimaraes_s.png'],
+'large' : ['img/projetos/lguimaraes.png'],
+'button_list'   :
+[
+{ 'title':'SITE', 'url' : 'http://lucianofranca.bl.ee/wordpress' }
+],
+'tags'  : ['EMPRESARIAL']
+},
+{
+'title' : 'ANLU STORE',
+'description'   : 'Site feito para a loja virtual ANLU STORE.',
+'thumbnail' : ['img/projetos/anlustore_s.png'],
+'large' : ['img/projetos/anlustore.png'],
+'button_list'   :
+[
+{ 'title':'SITE', 'url' : 'http://www.anlustore.com/' },
+],
+'tags'  : ['E-COMMERCE']
+},
+{
+'title' : 'LF WEBDEV',
+'description'   : 'Site portifolio',
+'thumbnail' : ['img/projetos/LFWebdev_s.png'],
+'large' : ['img/projetos/LFWebdev.png'],
+'button_list'   :
+[
+{ 'title':'SITE', 'url' : 'http://lucianopf.github.io/' },
+],
+'tags'  : ['PORTIFOLIO']
+},{
+'title' : 'WEBAPP VAN-ONLINE',
+'description'   : 'Aplicativo feito em NodeJS para gerenciar um sistema de transporte universitário',
+'thumbnail' : ['img/projetos/van-online_s.png'],
+'large' : ['img/projetos/van-online.png'],
+'button_list'   :
+[
+{ 'title':'SITE', 'url' : 'http://www.van-online.herokuapp.com/' },
+],
+'tags'  : ['WEBAPP']
+},
+]
+});
+});
+</script>

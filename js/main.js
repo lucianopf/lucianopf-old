@@ -21,11 +21,11 @@ $(document).on('ready',function(){
   $(window).on('resize', function(){
     pattern = t.generate(document.body.clientWidth, document.body.clientHeight);
     document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
-    liga_cores();
+    colorir();
   });
   // Captura das cores
   qtd = cor1.length;
-  while(qtd>=0){
+  while(qtd>0){
     if (qtd == cor1.length){
       escolha2 = cor1[qtd-1];
       escolha3 = cor1[qtd-2];
@@ -36,7 +36,7 @@ $(document).on('ready',function(){
     qtd = qtd - 1;
   }
   // Gera as cores dos elementos do dom
-var liga_cores = function(){
+  var colorir = function(){
     $("body").css( "color", escolha2 );
     $(".footer").css( "background-color", escolha2 );
     $("a").css("color", escolha3);
@@ -45,6 +45,9 @@ var liga_cores = function(){
     }).mouseout(function() {
         $(this).css("color",escolha3);
     });
+    $("head").append("<style>.content a{color: "+escolha3+";font-weight: bold}a:hover{color: "+escolha2+"}</style>");
+    $("head").append("<style>.btn-custom{border-color:"+escolha2+"; color: "+escolha2+" }.btn-custom:hover,.btn-custom:focus,.btn-custom:active,.btn-custom.active{border-color:"+escolha3+"; color: "+escolha3+";background-color:"+escolha1+"}.btn-custom.disabled:hover,.btn-custom.disabled:focus,.btn-custom.disabled:active,.btn-custom.disabled.active,.btn-custom[disabled]:hover,.btn-custom[disabled]:focus,.btn-custom[disabled]:active,.btn-custom[disabled].active,fieldset[disabled] .btn-custom:hover,fieldset[disabled] .btn-custom:focus,fieldset[disabled] .btn-custom:active,fieldset[disabled] .btn-custom.active{border-color:"+escolha3+"}</style>");
+    $("head").append("<style>.botoes a{color:"+escolha2+"}</style>");
     $(".menu a").mouseover(function() {
         $(this).addClass("menu_ativo");
     }).mouseout(function() {
@@ -58,7 +61,7 @@ var liga_cores = function(){
         $(this).css("color",escolha1);
     });
 }
-liga_cores();
+colorir();
 
 // Conteudo append gerando scrollbar
 checkScrollBar = function(){
@@ -78,6 +81,11 @@ checkScrollBar = function(){
   }
 liga_content("inicio");
 // MENUS
+  $('.main-logo').on('click',function(){
+    if(!$('.ativa_inicio').hasClass('menu_ativado')){
+      liga_content("inicio");
+    };
+  });
   $('.ativa_inicio').on('click',function(){
     if(!$('.ativa_inicio').hasClass('menu_ativado')){
       liga_content("inicio");
@@ -103,7 +111,9 @@ liga_content("inicio");
     $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
   };
   checkScrollBar2();
-
+  $("b1_sobre").on('click',function(){alert("opa")});
   //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
+
+
 });

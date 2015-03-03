@@ -1,5 +1,55 @@
-<a href="http://www.google.com"><p>clique aqui</p></a>
-<h1>Aqui vai ficar um slideshow com chamariz e alguns projetos realizados</h1>
-<p>Sunt nostrud nostrud sunt qui proident. Irure anim dolore officia eu reprehenderit consequat commodo id deserunt sit aute ea. Et aliqua consequat et anim occaecat. Culpa aute laboris laborum qui et. Fugiat id qui ea eu enim officia ea Lorem dolore fugiat exercitation.</p>
-<h3>Dolor aliqua esse minim sint quis.</h3>
-<p>Aliqua consequat labore ea non excepteur labore. Elit laborum excepteur voluptate commodo aliquip incididunt non. Excepteur nisi elit aute laborum elit sunt. Occaecat occaecat ullamco consectetur commodo nostrud sunt eiusmod velit duis deserunt ea eu eiusmod anim. Tempor ut tempor dolore laborum pariatur est esse eu. Labore cillum sit dolor commodo reprehenderit enim culpa ea. Cillum ex veniam excepteur ad Lorem nulla nisi ea aliquip dolor nisi adipisicing elit sint. Nostrud nulla eu commodo proident elit in minim labore dolor laborum nisi elit cupidatat. Et sunt velit dolore dolor nulla.</p>
+<script>
+var liga_content = function(nome){
+  $('.content').empty();
+  arq = nome + ".html"
+  $('.content').load(arq);
+  checkScrollBar();
+  $('.menu span').children().removeClass("menu_ativado");
+  menu_item = ".ativa_"+nome;
+  $(menu_item).addClass("menu_ativado");
+}
+$('.b1_sobre').on('click',function(){
+    liga_content("sobre");
+});
+$('.b1_projetos').on('click',function(){
+    liga_content("projetos");
+});
+</script>
+
+
+<br/>
+<div class="container-fluid solucoes" align="center">
+  <div class="row">
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Soluções dinâmicas</h1>
+      <i class="fa fa-desktop fa-4x"></i>&nbsp
+      <i class="fa fa-mobile fa-4x"></i>
+    </div>
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Fáceis de configurar</h1>
+      <i class="fa fa-cube fa-4x"></i>
+      <i class="fa fa-magic fa-4x"></i>
+    </div>
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Resultados Positivos</h1>
+      <i class="fa fa-line-chart fa-4x"></i>
+      <i class="fa fa-check-circle fa-4x"></i>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container-fluid botoes" align="center">
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-custom b1 b1_sobre" role="button"><b>SOBRE</b></a>
+    </div>
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-custom b1 b1_projetos" role="button"><b>PROJETOS</b></a><br/>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
