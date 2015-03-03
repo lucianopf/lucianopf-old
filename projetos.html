@@ -1,67 +1,65 @@
-<script src="js/modernizr.custom.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/elastic_grid.min.js"></script>
-<script src="js/elastic_grid.encode.js"></script>
+<br/>
 
+<div id='filter'>
+    <a href="#" class='all active'><font size="3">TODOS</font></a>
+    <a href="#"  class='corporativo'><font size="3">CORPORATIVO</font></a>
+    <a href="#"  class='ecommerce'><font size="3">E-COMMERCE</font></a>
+    <a href="#"  class='webapp'><font size="3">WEBAPP</font></a>
+</div>
+<br/>
+<!-- Demo images from behance.net -->
+<div id='posts'>
+  <div class='post corporativo'><img src='img/projetos/lguimaraes_600.png'/>
+    <div class='post-content'>
+      <h2>L.GUIMARAES</h2>
+      <p>Site corporativo da empresa L.GUIMARAES ARQUITETURA.</p>
+      <a href="http://lucianofranca.bl.ee/wordpress">SITE</a></div>
+  </div>
+  <div class='post ecommerce'><img src='img/projetos/anlustore_600.png'/>
+    <div class='post-content'>
+      <h2>ANLU STORE</h2>
+      <p>E-commerce de vestário ANLU STORE.</p>
+      <a href="http://www.anlustore.com">SITE</a> </div>
+  </div>
+  <div class='post webapp'><img src='img/projetos/van-online_600.png'/>
+    <div class='post-content'>
+      <h2>VAN-ONLINE</h2>
+      <p>WebApp criado para gerenciar transportes escolares.</p>
+      <a href="http://van-online.herokuapp.com">SITE</a> </div>
+  </div>
+</div><div style="clear:both"></div>
+</div>
+<div class='hidden'></div>
 
-<div id="demo"></div>
+<script>
+  $('.hidden').css('display','none');
+  $( "#filter a" ).each(function() {
+    $(this).on("click", function(){
+      if(!$(this).hasClass('active')){
+           var filter = $(this).attr('class');
 
+        if ( $(this).attr('class') == 'all' ) {
+           $('.hidden').contents().appendTo('#posts').hide().show('fast');
+           $( "#filter a" ).removeClass('active');
+           $(this).addClass('active');
+           $("#filter a").attr("disabled", false);
+           $(this).attr("disabled", true);
+        }
+        else {
+           $('.post').appendTo('.hidden');
+           $('.hidden').contents().appendTo('#posts').hide().show('fast');
+           $('.post:not(.' + filter + ')').appendTo('.hidden').hide('fast');
+           $( "#filter a" ).removeClass('active');
+           $(this).addClass('active');
+           $("#filter a").attr("disabled", false);
+           $(this).attr("disabled", true);
+        };
 
-<script type="text/javascript">
-$(function(){
-$("#demo").elastic_grid({
-'filterEffect': '<a href="http://www.jqueryscript.net/tags.php?/popup/">fly</a>', // moveup, scaleup, fallperspective, fly, flip, helix , popup
-'hoverDirection': true,
-'hoverDelay': 0,
-'hoverInverse': false,
-'expandingSpeed': 500,
-'expandingHeight': 500,
-'items' :
-[
-{
-'title' : 'L.GUIMARAES ARQUITETURA',
-'description'   : 'Site feito por encomenda para o escritório de arquitetura L GUIMARAES.',
-'thumbnail' : ['img/projetos/lguimaraes_s.png'],
-'large' : ['img/projetos/lguimaraes.png'],
-'button_list'   :
-[
-{ 'title':'SITE', 'url' : 'http://lucianofranca.bl.ee/wordpress' }
-],
-'tags'  : ['EMPRESARIAL']
-},
-{
-'title' : 'ANLU STORE',
-'description'   : 'Site feito para a loja virtual ANLU STORE.',
-'thumbnail' : ['img/projetos/anlustore_s.png'],
-'large' : ['img/projetos/anlustore.png'],
-'button_list'   :
-[
-{ 'title':'SITE', 'url' : 'http://www.anlustore.com/' },
-],
-'tags'  : ['E-COMMERCE']
-},
-{
-'title' : 'LF WEBDEV',
-'description'   : 'Site portifolio',
-'thumbnail' : ['img/projetos/LFWebdev_s.png'],
-'large' : ['img/projetos/LFWebdev.png'],
-'button_list'   :
-[
-{ 'title':'SITE', 'url' : 'http://lucianopf.github.io/' },
-],
-'tags'  : ['PORTIFOLIO']
-},{
-'title' : 'WEBAPP VAN-ONLINE',
-'description'   : 'Aplicativo feito em NodeJS para gerenciar um sistema de transporte universitário',
-'thumbnail' : ['img/projetos/van-online_s.png'],
-'large' : ['img/projetos/van-online.png'],
-'button_list'   :
-[
-{ 'title':'SITE', 'url' : 'http://www.van-online.herokuapp.com/' },
-],
-'tags'  : ['WEBAPP']
-},
-]
-});
-});
+      }});
+
+  });
+
 </script>
+
+<br/>
+<br/>

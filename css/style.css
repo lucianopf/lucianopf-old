@@ -95,4 +95,8 @@ img{
     width:100%;
   }
 
+  #posts .post {
+    min-width:100%;
+  }
+
 }

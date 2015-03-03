@@ -45,9 +45,10 @@ $(document).on('ready',function(){
     }).mouseout(function() {
         $(this).css("color",escolha3);
     });
-    $("head").append("<style>.content a{color: "+escolha3+";font-weight: bold}a:hover{color: "+escolha2+"}</style>");
+    $("head").append("<style>.content a{color: "+escolha3+";font-weight: bold}a:hover{color: "+escolha2+"}a.active{color: "+escolha2+";text-decoration: underline;}</style>");
     $("head").append("<style>.btn-custom{border-color:"+escolha2+"; color: "+escolha2+" }.btn-custom:hover,.btn-custom:focus,.btn-custom:active,.btn-custom.active{border-color:"+escolha3+"; color: "+escolha3+";background-color:"+escolha1+"}.btn-custom.disabled:hover,.btn-custom.disabled:focus,.btn-custom.disabled:active,.btn-custom.disabled.active,.btn-custom[disabled]:hover,.btn-custom[disabled]:focus,.btn-custom[disabled]:active,.btn-custom[disabled].active,fieldset[disabled] .btn-custom:hover,fieldset[disabled] .btn-custom:focus,fieldset[disabled] .btn-custom:active,fieldset[disabled] .btn-custom.active{border-color:"+escolha3+"}</style>");
     $("head").append("<style>.botoes a{color:"+escolha2+"}</style>");
+    $("head").append("<style>#posts .post p{border-right: 1px solid "+escolha3+";}#posts .post .post-content:hover {color:"+escolha2+";font-weight: bold;}#posts .post .post-content{color:"+escolha1+"}</style>");
     $(".menu a").mouseover(function() {
         $(this).addClass("menu_ativo");
     }).mouseout(function() {
