@@ -69,8 +69,10 @@ checkScrollBar = function(){};
 // Seleciona menu e liga opcao desejada
   var liga_content = function(nome){
     $('.content').empty();
+    $('.content').append("<div class='carregando' align='center'><br/><i class='fa fa-spinner fa-pulse fa-2x'></i></br></div>");
     arq = nome + ".html"
     $('.content').load(arq);
+    $('.content').removeClass("carregando");
     $('.menu span').children().removeClass("menu_ativado");
     menu_item = ".ativa_"+nome;
     $(menu_item).addClass("menu_ativado");

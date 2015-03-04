@@ -60,7 +60,7 @@
 
 <script>
 $('.enviar_email').on('click',function(){
-  console.log("Comecei");
+  $('.debug').append("<div class='carregando' align='center'><i class='fa fa-spinner fa-pulse fa-2x'></i></div>");
   $.ajax({
   type: "POST",
   url: "https://mandrillapp.com/api/1.0/messages/send.json",
