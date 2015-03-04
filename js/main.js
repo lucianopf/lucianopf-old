@@ -65,21 +65,16 @@ $(document).on('ready',function(){
 colorir();
 
 // Conteudo append gerando scrollbar
-checkScrollBar = function(){
-  setTimeout(function(){
-    $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
-  },250);
-};
+checkScrollBar = function(){};
 // Seleciona menu e liga opcao desejada
   var liga_content = function(nome){
     $('.content').empty();
     arq = nome + ".html"
     $('.content').load(arq);
-    checkScrollBar();
     $('.menu span').children().removeClass("menu_ativado");
     menu_item = ".ativa_"+nome;
     $(menu_item).addClass("menu_ativado");
-  }
+  };
 liga_content("inicio");
 // MENUS
   $('.main-logo').on('click',function(){
@@ -107,11 +102,7 @@ liga_content("inicio");
       liga_content("contato");
     };
   });
-  // Verifica se scrollbar esta correta na pagina
-  checkScrollBar2 = function(){
-    $('.wrapper').slimScroll({width:"100%",height: '100%',alwaysVisible: true});
-  };
-  checkScrollBar2();
+
   $("b1_sobre").on('click',function(){alert("opa")});
   //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");

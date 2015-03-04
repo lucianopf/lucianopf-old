@@ -2,10 +2,15 @@
 @font-face {
     font-family: 'satellite'; /*a name to be used later*/
     src: url('../fonts/caviar/CaviarDreams.ttf'); /*URL to font*/
+    src: url('../fonts/caviar/CaviarDreams.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/caviar/CaviarDreams.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('../fonts/caviar/CaviarDreams.woff') format('woff'), /* Modern Browsers */
+     url('../fonts/caviar/CaviarDreams.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/caviar/CaviarDreams.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
     display:none;
-}
+}*/
 /*Logo*/
 .main-logo{
   width:150px;

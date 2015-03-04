@@ -83,6 +83,9 @@ $('.enviar_email').on('click',function(){
  }).done(function(response) {
    $(".debug").empty();
    $(".debug").append("<h4 align='center'>MENSAGEM ENVIADA COM EXITO<h4>");
+   $("#Email").val("");
+   $("#Name").val("");
+   $("#Message").val("");
  });
 });
 </script>
