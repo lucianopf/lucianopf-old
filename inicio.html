@@ -1,6 +1,7 @@
 <script>
 var liga_content = function(nome){
   $('.content').empty();
+  $('.content').append("<div class='carregando' align='center'><br/><i class='fa fa-spinner fa-pulse fa-2x'></i></br></div>");
   arq = nome + ".html"
   $('.content').load(arq);
   checkScrollBar();
