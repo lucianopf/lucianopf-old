@@ -54,7 +54,7 @@ if (annyang) {
 	annyang.addCallback('start', function() {
 		alert("Reconhecimento de voz iniciado com sucesso. \n Comandos: Início, Sobre, Projetos, Contato");
 	});
-	annyang.start({ autoRestart: true, continuous: true });
+	annyang.start();
 
 	}
 else {alert('Este navegador não suporta comandos de voz.');}
