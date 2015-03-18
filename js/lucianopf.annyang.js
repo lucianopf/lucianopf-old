@@ -9,7 +9,8 @@
 
 if (annyang) {
 	var ativar_inicio = function(){
-		$(".ativa_incio").click();
+		console.log("Jeez");
+		$(".ativa_inicio").click();
 	};
 	var ativar_sobre = function(){
 		$(".ativa_sobre").click();
@@ -28,9 +29,7 @@ if (annyang) {
 
 	var commands = {
 		'ativar inicio': ativar_inicio,
-		'inicio': ativar_inicio,
 		'início': ativar_inicio,
-		'ínicio': ativar_inicio,
 		'home': ativar_inicio,
 		'ativar sobre': ativar_sobre,
 		'sobre': ativar_sobre,
@@ -52,7 +51,10 @@ if (annyang) {
 	annyang.addCommands(commands);
 	annyang.setLanguage('pt-BR');
 	// annyang.addCallback('resultNoMatch', function() {d.getElementById("texto").value = "Comando ou sentença desconhecidos."; _EaDsVr();});
-	// annyang.addCallback('errorPermissionDenied', function() {d.getElementById("texto").value = permissaoNegada; _EaDsVr();});
-	annyang.start();
+	annyang.addCallback('start', function() {
+		alert("Reconhecimento de voz iniciado com sucesso. \n Comandos: Início, Sobre, Projetos, Contato");
+	});
+	annyang.start({ autoRestart: true, continuous: true });
+
 	}
 else {alert('Este navegador não suporta comandos de voz.');}

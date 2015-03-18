@@ -116,9 +116,9 @@ liga_content("inicio");
   var ativa_microfone = 0;
   $(".ativa_microfone").on("click",function(){
     if(ativa_microfone == 0){
-      $("body").children().last().after("<script src='js/lucianopf.annyang.js'></script>");
+      $("body").children().last().after("<script class='microfone_ativado' src='js/lucianopf.annyang.js'></script>");
       ativa_microfone = 1;
     }
   });
-
+  $("i.icon").popover({'trigger':'hover'});
 });

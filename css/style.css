@@ -105,3 +105,9 @@ img{
   }
 
 }
+
+
+
+.icon {
+     display:inline-block; /* chrome-fix */
+ }
