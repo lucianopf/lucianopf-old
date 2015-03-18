@@ -8,11 +8,18 @@
 // Annyang injetado
 
 if (annyang) {
-	var sim = function(){
-		alert("Opa, entrei aqui sim!");
-	}
-
-
+	var ativar_inicio = function(){
+		$(".ativa_incio").click();
+	};
+	var ativar_sobre = function(){
+		$(".ativa_sobre").click();
+	};
+	var ativar_projetos = function(){
+		$(".ativa_projetos").click();
+	};
+	var ativar_contato = function(){
+		$(".ativa_contato").click();
+	};
 	// * --------------------------------------------------------------------------------------------------------------------
 	// *
 	// * Aqui definimos todos os comandos que a Miley entenderá (cortesia da biblioteca de reconhecimento de fala Annyang.js)
@@ -20,15 +27,25 @@ if (annyang) {
 	// * --------------------------------------------------------------------------------------------------------------------
 
 	var commands = {
-	  'sim': sim,
-	  // 'não': nao,
-	// Implementar fecharMiley
-		// 'adeus':	  fecharMiley,
-	// Implementar Ola
-	// * Palavras avulsas
-		// 'oi':		falar_oi,
-		// 'olá':		falar_ola,
-		// '(abre)(abrir) (o) bing (miley)':			bing,
+		'ativar inicio': ativar_inicio,
+		'inicio': ativar_inicio,
+		'início': ativar_inicio,
+		'ínicio': ativar_inicio,
+		'home': ativar_inicio,
+		'ativar sobre': ativar_sobre,
+		'sobre': ativar_sobre,
+		'about': ativar_sobre,
+		'ativar projetos': ativar_projetos,
+		'projetos': ativar_projetos,
+		'projeto': ativar_projetos,
+		'projects': ativar_projetos,
+		'portifolio': ativar_projetos,
+		'ativar contato': ativar_contato,
+		'contato': ativar_contato,
+		'contact': ativar_contato,
+		'contactar': ativar_contato,
+		'email': ativar_contato
+
 	};
 
 	annyang.debug();
@@ -38,4 +55,4 @@ if (annyang) {
 	// annyang.addCallback('errorPermissionDenied', function() {d.getElementById("texto").value = permissaoNegada; _EaDsVr();});
 	annyang.start();
 	}
-else {alert('Seu navegador não suporta comandos de voz. \n Favor abrir este recurso em outro browser.');}
+else {alert('Este navegador não suporta comandos de voz.');}
