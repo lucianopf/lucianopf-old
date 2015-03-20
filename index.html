@@ -5,7 +5,9 @@
   <script src="js/jquery.js"></script>
   <script src="js/d3.min.js"></script>
   <script src="js/tri.js"></script>
-  <link rel="shortcut icon" href="img/icon1.ico">
+  <script src="js/favicon.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <link id="favicon" rel="icon" type="image/png" href="img/icon1.ico">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -47,5 +49,19 @@
   </div>
   <script src="js/jquery.slimscroll.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  setTimeout(function(){
+    html2canvas($(".main-logo"), {
+      onrendered: function(canvas) {
+        link = document.getElementById('favicon').cloneNode(true);
+        link.href = canvas.toDataURL('image/png');
+        imagem = "<img src='"+canvas.toDataURL('image/png')+"'></img>";
+        $("head").append(link)
+        $("body").append(imagem);
+
+      }
+    });
+  },1000);
+  </script>
 </body>
 </html>

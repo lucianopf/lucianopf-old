@@ -121,4 +121,5 @@ liga_content("inicio");
     }
   });
   $("i.icon").popover({'trigger':'hover'});
+
 });
