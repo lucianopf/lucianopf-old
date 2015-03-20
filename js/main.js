@@ -120,7 +120,6 @@ liga_content("inicio");
       ativa_microfone = 1;
     }
   });
-  $("i.icon").popover({'trigger':'hover'});
 });
 // FavIconSetUp
 setTimeout(function(){
