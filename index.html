@@ -50,18 +50,7 @@
   <script src="js/jquery.slimscroll.min.js"></script>
   <script src="js/main.js"></script>
   <script>
-  setTimeout(function(){
-    html2canvas($(".main-logo"), {
-      onrendered: function(canvas) {
-        link = document.getElementById('favicon').cloneNode(true);
-        link.href = canvas.toDataURL('image/png');
-        imagem = "<img src='"+canvas.toDataURL('image/png')+"'></img>";
-        $("head").append(link)
-        $("body").append(imagem);
 
-      }
-    });
-  },1000);
   </script>
 </body>
 </html>

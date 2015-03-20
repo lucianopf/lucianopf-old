@@ -121,5 +121,14 @@ liga_content("inicio");
     }
   });
   $("i.icon").popover({'trigger':'hover'});
-
 });
+// FavIconSetUp
+setTimeout(function(){
+  html2canvas($(".main-logo"), {
+    onrendered: function(canvas) {
+      link = document.getElementById('favicon').cloneNode(true);
+      link.href = canvas.toDataURL('image/png');
+      favicon.change(canvas.toDataURL('image/png'));
+    }
+  });
+},1);
