@@ -108,19 +108,12 @@ liga_content("inicio");
   $("b1_sobre").on('click',function(){alert("opa")});
   //Selection Collor
   $("head").append("<style>::-moz-selection {color: "+escolha1+";background: "+escolha3+";}::selection {color: "+escolha1+";background: "+escolha3+";}</style>");
-
-
-  //Se o microfone for clicado adiciona o script de reconhecimento de voz
-  // <script src="js/lucianopf.annyang.js"></script>
-  // $("body").children().last().after("");
-  var ativa_microfone = 0;
-  $(".ativa_microfone").on("click",function(){
-    if(ativa_microfone == 0){
-      $("body").children().last().after("<script class='microfone_ativado' src='js/lucianopf.annyang.js'></script>");
-      ativa_microfone = 1;
-    }
-  });
 });
+
+
+
+
+
 // FavIconSetUp
 setTimeout(function(){
   html2canvas($(".main-logo"), {
