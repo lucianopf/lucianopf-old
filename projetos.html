@@ -1,0 +1,71 @@
+<br/>
+
+<div id='filter'>
+    <a href="#" class='all active'><font size="3">TODOS</font></a>
+    <a href="#"  class='corporativo'><font size="3">CORPORATIVO</font></a>
+    <a href="#"  class='ecommerce'><font size="3">E-COMMERCE</font></a>
+    <a href="#"  class='webapp'><font size="3">WEBAPP</font></a>
+</div>
+<br/>
+<!-- Demo images from behance.net -->
+<div id='posts'>
+  <div class='post corporativo'><img src='img/projetos/lguimaraes_600.png'/>
+    <div class='post-content'>
+      <h2>L.GUIMARAES</h2>
+      <p>Site corporativo da empresa L.GUIMARAES ARQUITETURA.</p>
+      <a href="http://lucianofranca.bl.ee/wordpress">SITE</a></div>
+  </div>
+  <div class='post ecommerce'><img src='img/projetos/anlustore_600.png'/>
+    <div class='post-content'>
+      <h2>ANLU STORE</h2>
+      <p>E-commerce de vestário ANLU STORE.</p>
+      <a href="http://www.anlustore.com">SITE</a> </div>
+  </div>
+  <div class='post webapp'><img src='img/projetos/van-online_600.png'/>
+    <div class='post-content'>
+      <h2>VAN-ONLINE</h2>
+      <p>WebApp criado para gerenciar transportes escolares.</p>
+      <a href="http://van-online.herokuapp.com">SITE</a> </div>
+  </div><div style="clear:both"></div>
+  <div class='post projeto'><img src='img/projetos/animacao-iluminacao_600.png'/>
+    <div class='post-content'>
+      <h2>ANIMACAO ILUMINACAO</h2>
+      <p>Site para demonstrar tecnologia em Javascript</p>
+      <a href="http://lucianopf.github.io/Animacao-Iluminacao/">SITE</a> </div>
+  </div>
+</div><div style="clear:both"></div>
+</div>
+<div class='hidden'></div>
+
+<script>
+  $('.hidden').css('display','none');
+  $( "#filter a" ).each(function() {
+    $(this).on("click", function(){
+      if(!$(this).hasClass('active')){
+           var filter = $(this).attr('class');
+
+        if ( $(this).attr('class') == 'all' ) {
+           $('.hidden').contents().appendTo('#posts').hide().show('fast');
+           $( "#filter a" ).removeClass('active');
+           $(this).addClass('active');
+           $("#filter a").attr("disabled", false);
+           $(this).attr("disabled", true);
+        }
+        else {
+           $('.post').appendTo('.hidden');
+           $('.hidden').contents().appendTo('#posts').hide().show('fast');
+           $('.post:not(.' + filter + ')').appendTo('.hidden').hide('fast');
+           $( "#filter a" ).removeClass('active');
+           $(this).addClass('active');
+           $("#filter a").attr("disabled", false);
+           $(this).attr("disabled", true);
+        };
+
+      }});
+
+  });
+
+</script>
+
+<br/>
+<br/>

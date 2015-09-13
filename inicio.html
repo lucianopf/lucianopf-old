@@ -1,0 +1,54 @@
+<script>
+var liga_content = function(nome){
+  $('.content').empty();
+  $('.content').append("<div class='carregando' align='center'><br/><i class='fa fa-spinner fa-pulse fa-2x'></i></br></div>");
+  arq = nome + ".html"
+  $('.content').load(arq);
+  checkScrollBar();
+  $('.menu span').children().removeClass("menu_ativado");
+  menu_item = ".ativa_"+nome;
+  $(menu_item).addClass("menu_ativado");
+}
+$('.b1_sobre').on('click',function(){
+    liga_content("sobre");
+});
+$('.b1_projetos').on('click',function(){
+    liga_content("projetos");
+});
+</script>
+
+<br/>
+<div class="container-fluid solucoes" align="center">
+  <div class="row">
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Soluções dinâmicas</h1>
+      <i class="fa fa-desktop fa-4x"></i>&nbsp
+      <i class="fa fa-mobile fa-4x"></i>
+    </div>
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Fáceis de configurar</h1>
+      <i class="fa fa-cube fa-4x"></i>
+      <i class="fa fa-magic fa-4x"></i>
+    </div>
+    <div class="col-sm-4 hvr-wobble-vertical">
+      <h1>Resultados Positivos</h1>
+      <i class="fa fa-line-chart fa-4x"></i>
+      <i class="fa fa-check-circle fa-4x"></i>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container-fluid botoes" align="center">
+  <div class="row">
+    <div class="col-sm-6" style="padding-top:10px;;min-width:130px;">
+      <a href="#" class="btn btn-custom b1 b1_sobre" role="button"><b>SOBRE</b></a>
+    </div>
+    <div class="col-sm-6"style="padding-top:10px;min-width:130px;">
+      <a href="#" class="btn btn-custom b1 b1_projetos" role="button"><b>PROJETOS</b></a><br/>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
