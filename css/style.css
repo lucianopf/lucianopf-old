@@ -1,0 +1,113 @@
+/*Font*/
+@font-face {
+    font-family: 'satellite'; /*a name to be used later*/
+    src: url('../fonts/caviar/CaviarDreams.ttf'); /*URL to font*/
+    src: url('../fonts/caviar/CaviarDreams.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/caviar/CaviarDreams.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('../fonts/caviar/CaviarDreams.woff') format('woff'), /* Modern Browsers */
+     url('../fonts/caviar/CaviarDreams.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/caviar/CaviarDreams.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+/*::-webkit-scrollbar {
+    display:none;
+}*/
+/*Logo*/
+.main-logo{
+  width:150px;
+  height:150px;
+  }
+.logo{
+  width:150px;
+  height:150px;
+}
+/*Visibilidades*/
+.invisible{
+  display:none;
+}
+/*Areas*/
+body{
+  background-attachment:fixed;
+}
+.main{
+  background-color:white;
+  width:55%;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'satellite';
+  min-width:345px;
+  overflow:hidden;
+}
+.header{
+}
+.menu{
+  position:relative;
+  top:-85px;
+  float:right;
+  right:50px;
+}
+.content{
+  padding:20px;
+}
+.footer{
+  padding:10px;
+}
+.footer p{
+  font-size:12px;
+}
+.footer a{
+  letter-spacing: 15px;
+}
+/*Elementos*/
+p{
+  font-size:23px;
+}
+.menu span{
+  font-size:17px;
+}
+.menu a{
+  text-decoration: none;
+  letter-spacing:1px;
+
+}
+.menu_ativado{
+  font-weight: bold;
+}
+.menu_ativo{
+  font-weight: bold;
+}
+img{
+  max-width:100%;
+}
+.solucoes{
+  width:80%;
+}
+.botoes{
+  width:50%;
+}
+.b1{
+  width:90%;
+}
+
+
+/*Conditionals*/
+@media screen and (max-width: 950px) {
+
+  .menu{
+    top:0px;
+    float:left;
+    right:0px;
+    padding:15px;
+    width:100%;
+  }
+
+  #posts .post {
+    min-width:100%;
+  }
+
+}
+
+
+
+.icon {
+     display:inline-block; /* chrome-fix */
+ }
